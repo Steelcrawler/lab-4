@@ -274,7 +274,7 @@ public class Application {
             }
         });
 
-        // TODO Task 4: Add action listener for getTopGrade button, follow example of getAverageButton
+        // Task 4: Add action listener for getTopGrade button, follow example of getAverageButton
 
         leaveTeamButton.addActionListener(event -> {
             try {
@@ -288,6 +288,7 @@ public class Application {
         theCard.add(new JLabel("The course you want to calculate the team average for:"));
         theCard.add(courseField);
         theCard.add(getAverageButton);
+        theCard.add(getTopGradeButton);
         theCard.add(leaveTeamButton);
         theCard.add(resultLabel);
         return theCard;
