@@ -5,6 +5,7 @@ import java.awt.CardLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
+import javax.sound.midi.Soundbank;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -243,15 +244,17 @@ public class Application {
         // make a separate line.
         final JButton getAverageButton = new JButton("Get Average Grade");
         final JButton getTopGradeButton = new JButton("Get Top Grade");
+        System.out.println("hello");
         // Task 4: Add another button for "Get Top Grade" (check the getAverageButton for example)
 
         final JButton leaveTeamButton = new JButton("Leave Team");
         final JLabel resultLabel = new JLabel();
-
         getTopGradeButton.addActionListener(event -> {
             final String course = courseField.getText();
+            System.out.println(getTopGradeUseCase.getTopGrade(course));
 
             try {
+                System.out.println(course);
                 final float top = getTopGradeUseCase.getTopGrade(course);
                 JOptionPane.showMessageDialog(jFrame, "Top Grade: " + top);
                 courseField.setText("");
