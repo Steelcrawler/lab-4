@@ -246,10 +246,24 @@ public class Application {
         final JTextField courseField = new JTextField(20);
         // make a separate line.
         final JButton getAverageButton = new JButton("Get Average Grade");
-        // TODO Task 4: Add another button for "Get Top Grade" (check the getAverageButton for example)
+        final JButton getTopGradeButton = new JButton("Get Top Grade");
+        // Task 4: Add another button for "Get Top Grade" (check the getAverageButton for example)
 
         final JButton leaveTeamButton = new JButton("Leave Team");
         final JLabel resultLabel = new JLabel();
+
+        getTopGradeButton.addActionListener(event -> {
+            final String course = courseField.getText();
+
+            try {
+                final float top = getTopUseCase.getTopGrade(course);
+                JOptionPane.showMessageDialog(jFrame, "Top Grade: " + top);
+                courseField.setText("");
+            }
+            catch (Exception ex) {
+                JOptionPane.showMessageDialog(jFrame, ex.getMessage());
+            }
+        });
 
         getAverageButton.addActionListener(event -> {
             final String course = courseField.getText();
